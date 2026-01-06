@@ -1,4 +1,5 @@
 //1295. Find Numbers with Even Number of Digits
+
 //Given an array nums of integers, return how many of them
 // contain an even number of digits.
 
@@ -11,10 +12,12 @@ public class EvenNumberOfDigits {
 
         System.out.println(findNumbers(arr));
     }
+
     public static int findNumbers(int[] arr)
     {
         int result = 0;
         int count = 0;
+
         for(int n : arr)
         {
             if(n < 0)
