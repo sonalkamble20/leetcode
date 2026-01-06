@@ -67,7 +67,6 @@ public class EncodeDecodeStrings
               decode = decode.concat(String.valueOf(val));
               temp = "";
           }
-
         }
         return deList;
     }
