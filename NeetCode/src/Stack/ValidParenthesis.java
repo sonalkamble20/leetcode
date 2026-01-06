@@ -21,7 +21,7 @@ public class ValidParenthesis {
         Stack<Character> valid = new Stack<>();
 
         char[] arr = s.toCharArray();
-
+        char top = ' ';
         for (char c : arr)
         {
             switch(c)
@@ -32,8 +32,16 @@ public class ValidParenthesis {
                 break;
                 case ')':
                 case '}':
-                case ']': valid.pop();
-                break;
+                case ']': if(valid.isEmpty())
+                            return false;
+                          else
+                            top = valid.pop();
+                          if(top == '(' && c != ')')
+                              return false;
+                          else if(top == '{' && c != '}')
+                              return false;
+                          else if(top == '[' && c != ']')
+                              return false;
             }
         }
 
