@@ -31,9 +31,9 @@ public class FirstAndLastPosition {
                 start = mid + 1;
             else if (nums[mid] > target)
                 end = mid - 1;
-            else if (nums[mid] == target) {
+            else if (nums[mid] == target)
+            {
                 ans = mid;
-
                 if (findStart)
                     end = mid - 1;
                 else
