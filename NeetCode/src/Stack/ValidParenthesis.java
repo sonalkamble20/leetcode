@@ -7,7 +7,6 @@
 //Return true if s is a valid string, and false otherwise.package Stack;
 package Stack;
 
-import java.util.Queue;
 import java.util.Stack;
 
 public class ValidParenthesis {
@@ -20,9 +19,8 @@ public class ValidParenthesis {
     {
         Stack<Character> valid = new Stack<>();
 
-        char[] arr = s.toCharArray();
         char top = ' ';
-        for (char c : arr)
+        for (char c : s.toCharArray())
         {
             switch(c)
             {
@@ -32,19 +30,13 @@ public class ValidParenthesis {
                 break;
                 case ')':
                 case '}':
-                case ']': if(valid.isEmpty())
-                            return false;
-                          else
-                            top = valid.pop();
-                          if(top == '(' && c != ')')
-                              return false;
-                          else if(top == '{' && c != '}')
-                              return false;
-                          else if(top == '[' && c != ']')
-                              return false;
+                case ']': if(valid.isEmpty())  return false;
+                          else  top = valid.pop();
+                          if(top == '(' && c != ')') return false;
+                          else if(top == '{' && c != '}') return false;
+                          else if(top == '[' && c != ']')  return false;
             }
         }
-
         return valid.isEmpty();
     }
 }
