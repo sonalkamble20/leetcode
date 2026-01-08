@@ -1,8 +1,10 @@
 package BinarySearch;
 
-public class SearchInInfiniteArray {public static void main(String[] args) {
-    System.out.println(search(new int[]{2, 3, 5, 6, 7, 8, 10, 11, 12, 15, 20, 23, 30}, 15));
-}
+public class SearchInInfiniteArray {
+    public static void main(String[] args)
+    {
+        System.out.println(search(new int[]{2, 3, 5, 6, 7, 8, 10, 11, 12, 15, 20, 23, 30}, 15));
+    }
     public static int search(int[] nums, int target)
     {
         int start = 0;
@@ -24,7 +26,6 @@ public class SearchInInfiniteArray {public static void main(String[] args) {
             else if(nums[mid] == target)
                 return mid;
         }
-
         return -1;
     }
 }

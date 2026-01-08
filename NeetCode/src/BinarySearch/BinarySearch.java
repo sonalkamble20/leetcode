@@ -5,7 +5,8 @@
 package BinarySearch;
 
 public class BinarySearch {
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         System.out.println(search(new int[]{-1,0,2,4,6,}, 4));
     }
     public static int search(int[] nums, int target)
