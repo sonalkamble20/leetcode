@@ -1,3 +1,5 @@
+//google + amazon
+
 //153. Find Minimum in Rotated Sorted Array
 //Suppose an array of length n sorted in ascending order is rotated between 1 and n times. For example, the array nums = [0,1,2,4,5,6,7] might become:
 //[4,5,6,7,0,1,2] if it was rotated 4 times.
@@ -12,13 +14,15 @@ package BinarySearch;
 public class SearchInRotatedSortedArray {
     public static void main(String[] args)
     {
-        System.out.println(search(new int[]{1}, 0));
+        System.out.println(search(new int[]{3, 1}, 1));
     }
 
     public static int search(int[] nums, int target)
     {
         int pivot = pivot(nums);
 
+        if(nums[pivot] == target)
+            return pivot;
         int start = 0;
         int end = pivot;
 
@@ -35,7 +39,7 @@ public class SearchInRotatedSortedArray {
 
         }
 
-        start = pivot;
+        start = pivot + 1;
         end = nums.length - 1;
 
         while(start <= end)
@@ -58,6 +62,8 @@ public class SearchInRotatedSortedArray {
         int start = 0;
         int end = nums.length - 1;
 
+        if(end == 0)
+            return 0;
         while(start <= end)
         {
             int mid = start + (end - start) / 2;
@@ -70,7 +76,11 @@ public class SearchInRotatedSortedArray {
                 end = mid - 1;
             else
                 start = mid + 1;
+            if(end == 0)
+                return 0;
         }
-        return -1;
+        if(end <= 0)
+            return 0;
+        return end;
     }
 }
