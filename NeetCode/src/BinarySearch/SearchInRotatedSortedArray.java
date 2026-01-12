@@ -12,8 +12,7 @@
 package BinarySearch;
 
 public class SearchInRotatedSortedArray {
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         System.out.println(search(new int[]{3, 1}, 1));
     }
 
