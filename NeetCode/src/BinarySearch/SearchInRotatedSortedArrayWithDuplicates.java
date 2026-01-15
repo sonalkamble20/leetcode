@@ -72,16 +72,12 @@ public class SearchInRotatedSortedArrayWithDuplicates {
                     end--;
                 }
             }
-            else if (nums[start] < nums[mid]
-                    || (nums[start] == nums[mid] && nums[mid] > nums[end])) {
+            else if (nums[start] < nums[mid] || (nums[start] == nums[mid] && nums[mid] > nums[end]))
                 start = mid + 1;
-            }
-
-            // Case 5: right side sorted → pivot on left
             else
                 end = mid - 1;
 
         }
-        return 0;
+        return -1;
     }
 }
