@@ -5,7 +5,7 @@ package BinarySearch;
 public class MinInRotatedSortedWithDuplicateValues {
     public static void main(String[] args)
     {
-        System.out.println(search(new int[]{3,3,1,3}));
+        System.out.println(search(new int[]{1,2,1}));
     }
     public static int search(int[] nums)
     {
@@ -18,7 +18,14 @@ public class MinInRotatedSortedWithDuplicateValues {
         {
             int mid = (start + end)  / 2;
 
-            if(nums[mid] <= nums[end]) {
+            if(nums[start] == nums[end])
+            {
+                if(nums[start] < min)
+                    min = nums[start];
+                start++;
+                end--;
+            }
+            else if(nums[mid] <= nums[end]) {
                 if(nums[mid] < min)
                     min = nums[mid];
                 end = mid - 1;
