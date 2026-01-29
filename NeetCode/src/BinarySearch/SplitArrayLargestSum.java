@@ -15,42 +15,18 @@ public class SplitArrayLargestSum {
 
     public static int sum(int[] nums)
     {
-        int min = min(nums);
-        int res = nums.length - 1;
-
-        if(min == 0)
-            return nums[res] + nums[res - 1];
-
-        if(min == 1)
-            return nums[0] + nums[res];
-
-
-        return nums[min - 1] + nums[min - 2];
-    }
-
-    public static int min(int[] nums)
-    {
         int start = 0;
         int end = nums.length - 1;
 
-        int max = Integer.MIN_VALUE;
-
         while(start <= end)
         {
-            int mid = (start + end)  / 2;
+            int mid = start + (end - start) / 2;
 
-            if(nums[mid] <= nums[end]) {
-                if(nums[mid] > max)
-                    max = nums[mid];
-                end = mid - 1;
-            }
-            else {
-                if(nums[end] > max)
-                    max = nums[end];
-                start = mid + 1;
-            }
         }
-        return max;
+        return 0;
     }
 
+
 }
+
+//INCOMPLETE
