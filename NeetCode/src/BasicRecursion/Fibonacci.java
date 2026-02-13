@@ -13,6 +13,5 @@ public class Fibonacci { public static void main(String[] args) {
             return 1;
 
         return Fibo(n-1) + Fibo(n - 2);
-
     }
 }
